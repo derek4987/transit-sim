@@ -1,12 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, SafeAreaView, Button, StatusBar, StyleSheet } from "react-native";
 import { Link, useRouter, useSearchParams } from "expo-router";
+import { busLogo } from "../assets/busLogo.png";
 
 const ticket = () => {
   const router = useRouter();
+	const [lightBgColor, setLightBgColor] = useState('#338ED1');
+	const [darkBgColor, setDarkBgColor] = useState('#0072C6');
+
+	let toggleLightColor = [];
+	let toggleDarkColor = [];
 
 	// de structure search params from home.js
 	const {letter, color, date, time} = useSearchParams();
+
+	// set color change toggle on tap
+	const changeColor =() => {
+		if (color === 'Green') {
+			toggleLightColor = ["#338ED1", "#37FF77"];
+			toggleDarkColor = ["#0072C6", "#05FF55"];
+		} else if (color === 'Purple') {
+			// toggleLightColor = ["#338ED1", "#B8A6C0"];
+			// toggleDarkColor = ["#0072C6", "#B286B7"];
+		} else if (color === 'Black') {
+			toggleLightColor = ["#338ED1", "#393333"];
+			toggleDarkColor = ["#0072C6", "#080000"];
+		} else if (color === 'Orange') {
+			toggleLightColor = ["#338ED1", "#FF9233"];
+			toggleDarkColor = ["#0072C6", "#FF7700"];
+		} else if (color === 'Pink') {
+			toggleLightColor = ["#338ED1", "#FF43E0"];
+			toggleDarkColor = ["#0072C6", "#FF14D8"];
+		} else if (color === 'Blue') {
+			// toggleLightColor = ["#338ED1", "#37FF77"];
+			// toggleDarkColor = ["#0072C6", "#05FF55"];
+		} else return;
+
+		if (lightBgColor === toggleLightColor[0]) {
+			setLightBgColor(toggleLightColor[1]);
+		} else if (lightBgColor === toggleLightColor[1]) {
+			setLightBgColor(toggleLightColor[0]);
+		}
+
+		// dark color
+		if (darkBgColor === toggleDarkColor[0]) {
+			setDarkBgColor(toggleDarkColor[1]);
+		} else if (darkBgColor === toggleDarkColor[1]) {
+			setDarkBgColor(toggleDarkColor[0]);
+		}
+	}
+
+	// onPress toggle color
+	// function toggleColor() {
+	// 	// light color
+	// 	if (lightBgColor === toggleLightColor[0]) {
+	// 		setLightBgColor(toggleLightColor[1]);
+	// 	} else if (lightBgColor ===toggleLightColor[1]) {
+	// 		setLightBgColor(toggleLightColor[0]);
+	// 	}
+
+	// 	// dark color
+	// 	if (darkBgColor === toggleDarkColor[0]) {
+	// 		setDarkBgColor(toggleDarkColor[1]);
+	// 	} else if (darkBgColor ===toggleDarkColor[1]) {
+	// 		setDarkBgColor(toggleDarkColor[0]);
+	// 	}
+	// }
 
   return (
     <View style={styles.safeAreaContainer}>
@@ -47,9 +106,12 @@ const ticket = () => {
 
 						{/* tap for color change section withi animations */}
 						<View style={styles.tapSection}>
-							<View style={{backgroundColor:"#338ED1", width:"100%", height:185}}></View>
-							<View style={{backgroundColor:"#0072C6", width:"100%", height:185, borderBottomWidth:2, borderBottomColor:"white"}}></View>
-							<Text style={styles.tapText}>ADULT ($2.75)</Text>
+							<View style={{backgroundColor:`${lightBgColor}`, width:"100%", height:185}}></View>
+							<View style={{backgroundColor:`${darkBgColor}`, width:"100%", height:185, borderBottomWidth:2, borderBottomColor:"white"}}></View>
+							<Text style={styles.tapText} onPress={changeColor}>ADULT ($2.75)</Text>
+
+							{/* bus logo with letter */}
+							
 						</View>
 
 						{/* date and time */}
