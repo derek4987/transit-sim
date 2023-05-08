@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, Button, StatusBar, StyleSheet } from "react-native";
+import { View, Text, Image, SafeAreaView, Button, StatusBar, StyleSheet, Animated } from "react-native";
 import { Link, useRouter, useSearchParams } from "expo-router";
-import { busLogo } from "../assets/busLogo.png";
 
 const ticket = () => {
   const router = useRouter();
@@ -36,6 +35,7 @@ const ticket = () => {
 			// toggleDarkColor = ["#0072C6", "#05FF55"];
 		} else return;
 
+		// light color
 		if (lightBgColor === toggleLightColor[0]) {
 			setLightBgColor(toggleLightColor[1]);
 		} else if (lightBgColor === toggleLightColor[1]) {
@@ -50,22 +50,56 @@ const ticket = () => {
 		}
 	}
 
-	// onPress toggle color
-	// function toggleColor() {
-	// 	// light color
-	// 	if (lightBgColor === toggleLightColor[0]) {
-	// 		setLightBgColor(toggleLightColor[1]);
-	// 	} else if (lightBgColor ===toggleLightColor[1]) {
-	// 		setLightBgColor(toggleLightColor[0]);
-	// 	}
+	// background animations
+	// const position = new Animated.ValueXY({x:0,y:0});
+	// Animated.timing(position, {
+	// 	toValue:{x:300, y:-310},
+	// 	useNativeDriver: true,
+	// 	duration: 5000
+	// }).start();
 
-	// 	// dark color
-	// 	if (darkBgColor === toggleDarkColor[0]) {
-	// 		setDarkBgColor(toggleDarkColor[1]);
-	// 	} else if (darkBgColor ===toggleDarkColor[1]) {
-	// 		setDarkBgColor(toggleDarkColor[0]);
+	// const position = new Animated.ValueXY({x:0,y:0});
+	// Animated.loop(
+	// 	Animated.sequence([
+	// 		Animated.timing(position, {
+	// 			toValue:{x:300, y:-310},
+	// 			useNativeDriver: true,
+	// 			duration: 5000
+	// 		})
+	// 	]),
+	// 	{
+	// 		iterations: 10
 	// 	}
-	// }
+	// ).start()
+
+	// animation addition not great but works if you time it right
+	const position = new Animated.ValueXY({x:0,y:0});
+	Animated.loop(
+		Animated.sequence([
+			Animated.timing(position, {
+				toValue:{x:520, y:-372},
+				useNativeDriver: true,
+				duration: 5000
+			})
+		]),
+		{
+			iterations: 10
+		}
+	).start()
+
+	const position1 = new Animated.ValueXY({x:0,y:0});
+	Animated.loop(
+		Animated.sequence([
+			Animated.timing(position1, {
+				toValue:{x:785, y:-565},
+				useNativeDriver: true,
+				duration: 7500
+			})
+		]),
+		{
+			iterations: 10
+		}
+	).start()
 
   return (
     <View style={styles.safeAreaContainer}>
@@ -110,8 +144,20 @@ const ticket = () => {
 							<View style={{backgroundColor:`${darkBgColor}`, width:"100%", height:185, borderBottomWidth:2, borderBottomColor:"white"}}></View>
 							<Text style={styles.tapText} onPress={changeColor}>ADULT ($2.75)</Text>
 
-							{/* bus logo with letter */}
+							{/* bus logos with letter */}
+							{/* <View style={{width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:260, left:50}}>
+								<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+								<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+							</View>
+
+							<View style={{width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:80, left:230}}>
+								<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+								<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+							</View>									 */}
 							
+							{/* QR code in corner and show code text */}
+							<Image source={require('../assets/qrCode.jpeg')} style={{width:55, height:55, position:"absolute", top:313, left:316}} />
+							<Text style={{color:"black", fontSize:10, fontWeight:"600", width:34, position:"absolute", top:327, left:280}}>SHOW CODE</Text>
 						</View>
 
 						{/* date and time */}
@@ -121,7 +167,46 @@ const ticket = () => {
 						</View>
 					</View>
 
-				</View>				
+				</View>		
+				
+				{/* Animation, having trouble with it */}
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:560, left:-125, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						],
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>	
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:768, left:-405, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position1.y},
+							{translateX:position1.x}
+						]
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>		
 			</View>
     </View>
   )

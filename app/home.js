@@ -14,7 +14,7 @@ const home = () => {
 	const mm = String(today.getMonth() + 1).padStart(2, '0');
 	const yy = String(today.getFullYear()).slice(-2);
 	let hours = today.getHours() + 2;
-	let minutes = today.getMinutes();
+	let minutes = String(today.getMinutes()).padStart(2, '0');
 
 	const todaysDate = `${mm}/${dd}/${yy}`;
 
@@ -23,10 +23,6 @@ const home = () => {
 			hours = `0${hours - 24}`;
 		} else if (hours < 10) {
 			hours = `0${hours}`;
-		} else return
-
-		if (minutes < 10) {
-			minutes = `0${minutes}`;
 		} else return
 	}
 	getTime();
