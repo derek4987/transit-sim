@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, SafeAreaView, Button, StatusBar, StyleSheet, Animated } from "react-native";
 import { Link, useRouter, useSearchParams } from "expo-router";
+import BgAnimation from "../components/BgAnimation";
 
 const ticket = () => {
   const router = useRouter();
@@ -31,8 +32,8 @@ const ticket = () => {
 			toggleLightColor = ["#338ED1", "#FF43E0"];
 			toggleDarkColor = ["#0072C6", "#FF14D8"];
 		} else if (color === 'Blue') {
-			// toggleLightColor = ["#338ED1", "#37FF77"];
-			// toggleDarkColor = ["#0072C6", "#05FF55"];
+			toggleLightColor = ["#338ED1", "#334EFF"];
+			toggleDarkColor = ["#0072C6", "#0022FF"];
 		} else return;
 
 		// light color
@@ -77,23 +78,9 @@ const ticket = () => {
 	Animated.loop(
 		Animated.sequence([
 			Animated.timing(position, {
-				toValue:{x:520, y:-372},
+				toValue:{x:780, y:-540},
 				useNativeDriver: true,
-				duration: 5000
-			})
-		]),
-		{
-			iterations: 10
-		}
-	).start()
-
-	const position1 = new Animated.ValueXY({x:0,y:0});
-	Animated.loop(
-		Animated.sequence([
-			Animated.timing(position1, {
-				toValue:{x:785, y:-565},
-				useNativeDriver: true,
-				duration: 7500
+				duration: 9000,
 			})
 		]),
 		{
@@ -169,9 +156,19 @@ const ticket = () => {
 
 				</View>		
 				
-				{/* Animation, having trouble with it */}
+				{/* Animations x 6, animation resets after changing ticket color and I don't know how to stop that. not using component so it renders quicker*/}
+				{/* <BgAnimation letter={letter} top={230} left={340} />
+				<BgAnimation letter={letter} top={365} left={145} />
+				<BgAnimation letter={letter} top={500} left={-50} />
+				<BgAnimation letter={letter} top={635} left={-245} />
+				<BgAnimation letter={letter} top={770} left={-440} />
+				<BgAnimation letter={letter} top={905} left={-635} />
+				<BgAnimation letter={letter} top={1040} left={-830} />
+				<BgAnimation letter={letter} top={1175} left={-1025} />
+				<BgAnimation letter={letter} top={1310} left={-1220} />	 */}
+
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:560, left:-125, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:230, left:340, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -190,7 +187,7 @@ const ticket = () => {
 				</View>	
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:768, left:-405, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:365, left:145, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -199,14 +196,147 @@ const ticket = () => {
 						height:80,
 						width:80,
 						transform:[
-							{translateY:position1.y},
-							{translateX:position1.x}
+							{translateY:position.y},
+							{translateX:position.x}
 						]
 					}}>
 						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
 						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
 					</Animated.View>
 				</View>		
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:500, left:-50, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						]
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>	
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:635, left:-245, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						],
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>	
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:770, left:-440, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						]
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>		
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:905, left:-635, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						]
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>	
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1040, left:-830, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						],
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>	
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1175, left:-1025, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						]
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>		
+
+				<View style={{
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1310, left:-1220, zIndex: 10}}>
+					<Animated.View style={{
+						display:"flex",
+						flexDirection:"row",
+						alignItems:"center",
+						justifyContent:"center",
+						height:80,
+						width:80,
+						transform:[
+							{translateY:position.y},
+							{translateX:position.x}
+						]
+					}}>
+						<Text style={{color:"#F2F2F2", fontSize:65, fontWeight:"500", opacity:0.5}}>{letter}</Text>
+						<Image source={require('../assets/busLogo.png')} style={{width:50, height:50, opacity:0.5}} />
+					</Animated.View>
+				</View>	
 			</View>
     </View>
   )
