@@ -20,8 +20,8 @@ const ticket = () => {
 			toggleLightColor = ["#338ED1", "#37FF77"];
 			toggleDarkColor = ["#0072C6", "#05FF55"];
 		} else if (color === 'Purple') {
-			// toggleLightColor = ["#338ED1", "#B8A6C0"];
-			// toggleDarkColor = ["#0072C6", "#B286B7"];
+			toggleLightColor = ["#338ED1", "#DE39FF"];
+			toggleDarkColor = ["#0072C6", "#D608FF"];
 		} else if (color === 'Black') {
 			toggleLightColor = ["#338ED1", "#393333"];
 			toggleDarkColor = ["#0072C6", "#080000"];
