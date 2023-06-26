@@ -115,20 +115,20 @@ const ticket = () => {
 								<Link href="/home" style={styles.backButton}>Back</Link>
 							</View>
 							{/* ticket text */}
-							<Text style={{color:"white", fontSize:18, fontWeight:"bold" }}>Ticket</Text>
+							<Text style={{color:"white", fontSize:17, fontWeight:"600" }}>Ticket</Text>
 						</View>
 
 						{/* yellow section with "metro" text */}
 						<View style={styles.yellowSection}>
-							<View style={{backgroundColor:"#FDD068", width:"100%", height:60}}></View>
-							<View style={{backgroundColor:"#FCC442", width:"100%", height:60, borderBottomWidth:2, borderBottomColor:"white"}}></View>
+							<View style={{backgroundColor:"#FDD068", width:"100%", height:92}}></View>
+							<View style={{backgroundColor:"#FCC442", width:"100%", height:92, borderBottomWidth:2, borderBottomColor:"white"}}></View>
 							<Text style={styles.metroText}>METRO</Text>
 						</View>
 
 						{/* tap for color change section withi animations */}
 						<View style={styles.tapSection}>
-							<View style={{backgroundColor:`${lightBgColor}`, width:"100%", height:185}}></View>
-							<View style={{backgroundColor:`${darkBgColor}`, width:"100%", height:185, borderBottomWidth:2, borderBottomColor:"white"}}></View>
+							<View style={{backgroundColor:`${lightBgColor}`, width:"100%", height:207}}></View>
+							<View style={{backgroundColor:`${darkBgColor}`, width:"100%", height:207, borderBottomWidth:2, borderBottomColor:"white"}}></View>
 							<Text style={styles.tapText} onPress={changeColor}>ADULT ($2.75)</Text>
 
 							{/* bus logos with letter */}
@@ -143,14 +143,14 @@ const ticket = () => {
 							</View>									 */}
 							
 							{/* QR code in corner and show code text */}
-							<Image source={require('../assets/qrCode.jpeg')} style={{width:55, height:55, position:"absolute", top:313, left:316}} />
-							<Text style={{color:"black", fontSize:10, fontWeight:"600", width:34, position:"absolute", top:327, left:280}}>SHOW CODE</Text>
+							<Image source={require('../assets/qrCode.jpeg')} style={{width:55, height:55, position:"absolute", top:357, left:355}} />
+							<Text style={{color:"black", fontSize:10, fontWeight:"600", width:34, position:"absolute", top:372, left:320}}>SHOW CODE</Text>
 						</View>
 
 						{/* date and time */}
 						<View style={styles.dateTimeSection}>
 							<Text style={{fontSize:30, fontWeight:"bold", color:"white"}}>{date} {time}</Text>
-							<Text style={{fontSize:18, fontWeight:"bold", color:"white", padding:3}}>Expiration Date & Time</Text>
+							<Text style={{fontSize:21, fontWeight:"bold", color:"white", padding:3}}>Expiration Date & Time</Text>
 						</View>
 					</View>
 
@@ -168,7 +168,7 @@ const ticket = () => {
 				<BgAnimation letter={letter} top={1310} left={-1220} />	 */}
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:230, left:340, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:340, left:340, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -187,7 +187,7 @@ const ticket = () => {
 				</View>	
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:365, left:145, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:475, left:145, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -206,7 +206,7 @@ const ticket = () => {
 				</View>		
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:500, left:-50, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:610, left:-50, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -225,7 +225,7 @@ const ticket = () => {
 				</View>	
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:635, left:-245, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:745, left:-245, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -244,7 +244,7 @@ const ticket = () => {
 				</View>	
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:770, left:-440, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:880, left:-440, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -263,7 +263,7 @@ const ticket = () => {
 				</View>		
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:905, left:-635, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1015, left:-635, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -282,7 +282,7 @@ const ticket = () => {
 				</View>	
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1040, left:-830, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1150, left:-830, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -301,7 +301,7 @@ const ticket = () => {
 				</View>	
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1175, left:-1025, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1285, left:-1025, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -320,7 +320,7 @@ const ticket = () => {
 				</View>		
 
 				<View style={{
-					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1310, left:-1220, zIndex: 10}}>
+					width:80, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", position:"absolute", top:1420, left:-1220, zIndex: 10}}>
 					<Animated.View style={{
 						display:"flex",
 						flexDirection:"row",
@@ -369,13 +369,13 @@ const styles = StyleSheet.create({
 		height: "100%",
 		backgroundColor: "#20418C",
 		borderRadius: 12,
-		marginTop: "3%",
+		marginTop: "6.5%",
 	},
 
 	// main ticket area
 	mainTicketContainer: {
 		zIndex: 2,
-		marginTop: "4%",
+		marginTop: "3%",
 		width: "110%",
 		height: "100%",
 		borderTopLeftRadius: 12,
@@ -402,14 +402,14 @@ const styles = StyleSheet.create({
 	// back button
 	backButtonView: {
 		position: "absolute",
-		left: 10,
+		left: 13,
 		flex: 0,
 		alignItems: "center",
 		width: 50,
 	},
 	backButton: {
 		color: "white",
-		fontSize: 18,
+		fontSize: 17,
 	},
 
 	// yellow "metro" section
@@ -423,7 +423,7 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		color: "white",
 		position: "absolute",
-		top: 30,
+		top: 60,
 	},
 
 	// tap section for color change and animation
@@ -437,7 +437,7 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		color: "white",
 		position: "absolute",
-		top: 160,
+		top: 182,
 	},
 
 	// date and time section 
@@ -445,8 +445,9 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
-		paddingTop: 8,
+		paddingTop: 45,
 		paddingBottom: 5,
+		gap: 55,
 	},
 
 });

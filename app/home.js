@@ -10,17 +10,19 @@ const home = () => {
 
 	// date and time inputs
 	const today = new Date();
-	const dd = String(today.getDate()).padStart(2, '0');
+	let dd = String(today.getDate()).padStart(2, '0');
 	const mm = String(today.getMonth() + 1).padStart(2, '0');
 	const yy = String(today.getFullYear()).slice(-2);
 	let hours = today.getHours() + 2;
 	let minutes = String(today.getMinutes()).padStart(2, '0');
 
-	const todaysDate = `${mm}/${dd}/${yy}`;
+	let todaysDate = `${mm}/${dd}/${yy}`;
 
 	function getTime() {
 		if (hours > 23) {
 			hours = `0${hours - 24}`;
+			dd = parseInt(dd) + 1;
+			todaysDate = `${mm}/${dd}/${yy}`
 		} else if (hours < 10) {
 			hours = `0${hours}`;
 		} else return
