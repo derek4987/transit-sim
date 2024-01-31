@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Platform } from "react-native";
 import { Link } from "expo-router";
 
 export default function Page() {
