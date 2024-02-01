@@ -1,11 +1,6 @@
 {
   "expo": {
     "scheme": "acme",
-    "web": {
-      "bundler": "metro"
-    },
-    "plugins": [
-      "expo-router"
-    ]
+    "web": { "bundler": "metro" }
   }
 }

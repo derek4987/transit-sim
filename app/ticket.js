@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, Image, SafeAreaView, Button, StatusBar, StyleSheet, Animated, Platform } from "react-native";
-import { Link, useRouter, useLocalSearchParams } from "expo-router";
+import { View, Text, Image, SafeAreaView, Button, StatusBar, StyleSheet, Animated } from "react-native";
+import { Link, useRouter, useSearchParams } from "expo-router";
 import BgAnimation from "../components/BgAnimation";
 
 const ticket = () => {
@@ -12,7 +12,7 @@ const ticket = () => {
 	let toggleDarkColor = [];
 
 	// de structure search params from home.js
-	const {letter, color, date, time} = useLocalSearchParams();
+	const {letter, color, date, time} = useSearchParams();
 
 	// set color change toggle on tap
 	const changeColor =() => {
