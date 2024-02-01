@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, Button, StatusBar, StyleSheet, TextInput } from "react-native";
+import { View, Text, SafeAreaView, Button, StatusBar, StyleSheet, TextInput, Platform } from "react-native";
 import { Link, useRouter } from "expo-router";
 
 const home = () => {

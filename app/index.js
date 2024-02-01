@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Platform } from "react-native";
 import { Link } from "expo-router";
 
 export default function Page() {
@@ -7,12 +7,13 @@ export default function Page() {
       <View
 				style={{
 					height: Platform.OS === 'ios' ? 20 : StatusBar.currentHeight,
+          backgroundColor: "#244A9F"
 				}}>
 				<StatusBar
-				barStyle="light-content"
-				hidden={false}
-        translucent={false}
-			/>
+				  barStyle="light-content"
+				  hidden={false}
+          translucent={false}
+			  />
 			</View>
       <View style={styles.main}>
         <Text style={styles.title}>Transit Sim</Text>
