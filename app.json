@@ -6,6 +6,9 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "updates": {
+      "useClassicUpdates" : true
+    }
   }
 }

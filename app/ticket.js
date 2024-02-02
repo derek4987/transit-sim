@@ -99,7 +99,7 @@ const ticket = () => {
 					<StatusBar
 					barStyle="light-content"
 					hidden={false}
-      	  translucent={true}
+      	  			translucent={true}
 				/>
 				</View>
 				
@@ -359,6 +359,8 @@ const styles = StyleSheet.create({
 		height: "100%",
 		flex: 1,
 		alignItems: "center",
+		// negative margin added to make ticket look correct after weird white bars that showed up after update.
+		marginTop: "-12%"
 	},
 
 	// ticket background
